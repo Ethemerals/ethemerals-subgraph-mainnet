@@ -5,3 +5,4 @@ src/types/
 yarn-error.log
 metadataStats.ts
 src/utils/metadataStats.ts
+src/utils/meralBonusStats.ts

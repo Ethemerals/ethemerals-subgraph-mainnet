@@ -150,26 +150,26 @@ export function handleMint(event: Mint): void {
 	//   'Dark Knight' 15,5,0
 	//   'Dragoon' 10, 5, 5
 	// ],
-	// if (metadata.subClass == 'Paladin') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]);
-	// 	token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(200));
-	// 	token.spdBonus = BigInt.fromI32(statData[3]);
-	// }
-	// if (metadata.subClass == 'Knight') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(50));
-	// 	token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(150));
-	// 	token.spdBonus = BigInt.fromI32(statData[3]);
-	// }
-	// if (metadata.subClass == 'Dark Knight') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(150));
-	// 	token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(50));
-	// 	token.spdBonus = BigInt.fromI32(statData[3]);
-	// }
-	// if (metadata.subClass == 'Dragoon') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(100));
-	// 	token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(50));
-	// 	token.spdBonus = BigInt.fromI32(statData[3]).minus(BigInt.fromI32(50));
-	// }
+	if (metadata.subClass == 'Paladin') {
+		token.atkBonus = BigInt.fromI32(statData[0]);
+		token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(200));
+		token.spdBonus = BigInt.fromI32(statData[2]);
+	}
+	if (metadata.subClass == 'Knight') {
+		token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(50));
+		token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(150));
+		token.spdBonus = BigInt.fromI32(statData[2]);
+	}
+	if (metadata.subClass == 'Dark Knight') {
+		token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(150));
+		token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(50));
+		token.spdBonus = BigInt.fromI32(statData[2]);
+	}
+	if (metadata.subClass == 'Dragoon') {
+		token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(100));
+		token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(50));
+		token.spdBonus = BigInt.fromI32(statData[2]).minus(BigInt.fromI32(50));
+	}
 
 	// [
 	//   'Sorcerer' 20, 0 0
@@ -177,26 +177,26 @@ export function handleMint(event: Mint): void {
 	//   'Cleric' 0, 16, 4
 	//   'Druid' 7, 6, 7
 	// ],
-	// if (metadata.subClass == 'Sorcerer') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(200));
-	// 	token.defBonus = BigInt.fromI32(statData[1]);
-	// 	token.spdBonus = BigInt.fromI32(statData[3]);
-	// }
-	// if (metadata.subClass == 'Summoner') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(100));
-	// 	token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(100));
-	// 	token.spdBonus = BigInt.fromI32(statData[3]);
-	// }
-	// if (metadata.subClass == 'Cleric') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]);
-	// 	token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(160));
-	// 	token.spdBonus = BigInt.fromI32(statData[3]).minus(BigInt.fromI32(40));
-	// }
-	// if (metadata.subClass == 'Druid') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(70));
-	// 	token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(60));
-	// 	token.spdBonus = BigInt.fromI32(statData[3]).minus(BigInt.fromI32(70));
-	// }
+	if (metadata.subClass == 'Sorcerer') {
+		token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(200));
+		token.defBonus = BigInt.fromI32(statData[1]);
+		token.spdBonus = BigInt.fromI32(statData[2]);
+	}
+	if (metadata.subClass == 'Summoner') {
+		token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(100));
+		token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(100));
+		token.spdBonus = BigInt.fromI32(statData[2]);
+	}
+	if (metadata.subClass == 'Cleric') {
+		token.atkBonus = BigInt.fromI32(statData[0]);
+		token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(160));
+		token.spdBonus = BigInt.fromI32(statData[2]).minus(BigInt.fromI32(40));
+	}
+	if (metadata.subClass == 'Druid') {
+		token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(70));
+		token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(60));
+		token.spdBonus = BigInt.fromI32(statData[2]).minus(BigInt.fromI32(70));
+	}
 
 	// [
 	//   'Ranger' 0, 0, 20
@@ -204,29 +204,29 @@ export function handleMint(event: Mint): void {
 	//   'Assassin' 12, 0, 8
 	//   'Monk' 4, 8, 8
 	// ]
-	// if (metadata.subClass == 'Ranger') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]);
-	// 	token.defBonus = BigInt.fromI32(statData[1]);
-	// 	token.spdBonus = BigInt.fromI32(statData[3]).minus(BigInt.fromI32(200));
-	// }
-	// if (metadata.subClass == 'Berserker') {
-	// 	token.atk = BigInt.fromI32(event.params.atk).plus(BigInt.fromI32(100));
-	// 	token.spd = BigInt.fromI32(event.params.spd).plus(BigInt.fromI32(100));
+	if (metadata.subClass == 'Ranger') {
+		token.atkBonus = BigInt.fromI32(statData[0]);
+		token.defBonus = BigInt.fromI32(statData[1]);
+		token.spdBonus = BigInt.fromI32(statData[2]).minus(BigInt.fromI32(200));
+	}
+	if (metadata.subClass == 'Berserker') {
+		token.atk = BigInt.fromI32(event.params.atk).plus(BigInt.fromI32(100));
+		token.spd = BigInt.fromI32(event.params.spd).plus(BigInt.fromI32(100));
 
-	// 	token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(100));
-	// 	token.defBonus = BigInt.fromI32(statData[1]);
-	// 	token.spdBonus = BigInt.fromI32(statData[3]).minus(BigInt.fromI32(100));
-	// }
-	// if (metadata.subClass == 'Assassin') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(120));
-	// 	token.defBonus = BigInt.fromI32(statData[1]);
-	// 	token.spdBonus = BigInt.fromI32(statData[3]).minus(BigInt.fromI32(80));
-	// }
-	// if (metadata.subClass == 'Monk') {
-	// 	token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(40));
-	// 	token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(80));
-	// 	token.spdBonus = BigInt.fromI32(statData[3]).minus(BigInt.fromI32(80));
-	// }
+		token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(100));
+		token.defBonus = BigInt.fromI32(statData[1]);
+		token.spdBonus = BigInt.fromI32(statData[2]).minus(BigInt.fromI32(100));
+	}
+	if (metadata.subClass == 'Assassin') {
+		token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(120));
+		token.defBonus = BigInt.fromI32(statData[1]);
+		token.spdBonus = BigInt.fromI32(statData[2]).minus(BigInt.fromI32(80));
+	}
+	if (metadata.subClass == 'Monk') {
+		token.atkBonus = BigInt.fromI32(statData[0]).minus(BigInt.fromI32(40));
+		token.defBonus = BigInt.fromI32(statData[1]).minus(BigInt.fromI32(80));
+		token.spdBonus = BigInt.fromI32(statData[2]).minus(BigInt.fromI32(80));
+	}
 
 	tokenAction.type = 'Minted';
 
