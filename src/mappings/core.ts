@@ -14,7 +14,7 @@ import {
 	ensureScorecard,
 } from '../utils/ensures';
 
-import { bonusStats } from '../utils/meralBonusStats';
+import { bonusStats } from '../metadata/meralBonusStats';
 
 import { getMintPrice, getMaxAvailableIndex, getEthemeralSupply } from '../utils/contractCallsCore';
 import { ADDRESS_ZERO, ZERO_BI, ZERO_BD, ONE_BI, TEN_BI, INI_SCORE, CORE_ADDRESS, coreContract } from '../utils/constants';

@@ -5,8 +5,6 @@ import { ADDRESS_ZERO, ZERO_BI, ZERO_BD, ONE_BI, TEN_BI, INI_SCORE, INI_ALLOWDEL
 import { getMintPrice, getMaxAvailableIndex, getEthemeralSupply } from './contractCallsCore';
 import { getBalanceOf } from './contractCallsELF';
 import {
-	tokenToRanks,
-	allMetadata,
 	metaMainclass,
 	metaSubclass,
 	metaCoinName,
@@ -19,7 +17,11 @@ import {
 	metaItems,
 	metaItemsStats,
 	metaCostumes,
-} from './metadataStats';
+} from '../metadata/metadataStats';
+
+import { meralTraits } from '../metadata/meralTraits';
+
+import { tokenToRanks } from '../metadata/tokenToRanks';
 
 import {
 	CoreAction,
@@ -149,7 +151,7 @@ export function ensureScorecard(tokenId: string): Scorecard {
 
 export function ensureMetadata(rank: BigInt): Metadata {
 	let rankIndex = rank.toI32();
-	let metadata = allMetadata[rankIndex];
+	let metadata = meralTraits[rankIndex];
 	let id = metadata[0];
 
 	let meta = Metadata.load(id.toString()) as Metadata;
