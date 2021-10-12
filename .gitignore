@@ -4,10 +4,9 @@ src/types/
 .DS_STORE
 yarn-error.log
 metadataStats.ts
-src/metadata/meralBonusStats.ts
-src/metadata/meralTraits.ts
-src/metadata/metadataStats.ts
-src/metadata/tokenToRanks.ts
+meralBonusStats.ts
+meralTraits.ts
+tokenToRanks.ts
 
 
 # 1042
