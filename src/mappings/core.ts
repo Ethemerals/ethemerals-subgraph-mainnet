@@ -19,7 +19,7 @@ import { bonusStats } from '../metadata/meralBonusStats';
 import { getMintPrice, getMaxAvailableIndex, getEthemeralSupply } from '../utils/contractCallsCore';
 import { ADDRESS_ZERO, ZERO_BI, ZERO_BD, ONE_BI, TEN_BI, INI_SCORE, CORE_ADDRESS, coreContract } from '../utils/constants';
 
-import { Approval, ApprovalForAll, OwnershipTransferred, DelegateChange, PriceChange, AllowDelegatesChange, Transfer, Mint } from '../../generated/Ethemerals/Ethemerals';
+import { Approval, ApprovalForAll, OwnershipTransferred, DelegateChange, PriceChange, AllowDelegatesChange, Transfer, Mint, ChangeRewards, ChangeScore } from '../../generated/Ethemerals/Ethemerals';
 
 import { Ethemeral, Core, Account, CoreAction, EthemeralAction, AccountAction } from '../../generated/schema';
 
@@ -44,23 +44,25 @@ export function handleApproval(event: Approval): void {
 
 export function handleApprovalForAll(event: ApprovalForAll): void {}
 
-export function handleDelegateChange(event: DelegateChange): void {
-	let delegate = ensureDelegate(event, addressId(event.params.delegate));
-	let action = ensureDelegateAction(event, delegate.id);
-	action.type = 'DelegateChange';
-	delegate.active = event.params.add;
-	action.save();
-	delegate.save();
+export function handleAllowDelegatesChange(event: AllowDelegatesChange): void {
+	// let delegate = ensureDelegate(event, addressId(event.params.delegate));
+	// let action = ensureDelegateAction(event, delegate.id);
+	// action.type = 'DelegateChange';
+	// delegate.active = event.params.add;
+	// action.save();
+	// delegate.save();
 }
 
-export function handleDisallowDelegatesChange(event: AllowDelegatesChange): void {
-	let account = ensureAccount(event, addressId(event.params.user));
-	let action = ensureAccountAction(event, account.id);
-	action.type = 'DelegateChange';
-	account.allowDelegates = event.params.allow;
-	action.save();
-	account.save();
-}
+// export function handleDisallowDelegatesChange(event: AllowDelegatesChange): void {
+// 	let account = ensureAccount(event, addressId(event.params.user));
+// 	let action = ensureAccountAction(event, account.id);
+// 	action.type = 'DelegateChange';
+// 	account.allowDelegates = event.params.allow;
+// 	action.save();
+// 	account.save();
+// }
+
+export function handleDelegateChange(event: DelegateChange): void {}
 
 export function handleOwnershipTransferred(event: OwnershipTransferred): void {
 	let core = ensureCore(event);
@@ -248,3 +250,14 @@ export function handleMint(event: Mint): void {
 	core.ethemeralSupply = getEthemeralSupply();
 	core.save();
 }
+
+export function handleChangeRewards(event: ChangeRewards): void {
+	let token = ensureEthemeral(event, event.params.tokenId);
+	// let tokenAction = ensureEthemeralAction(event, token.id);
+
+	// tokenAction.type = event.params.action;
+	token.rewards = event.params.rewards;
+	token.save();
+}
+
+export function handleChangeScore(event: ChangeScore): void {}
